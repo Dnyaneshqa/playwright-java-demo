@@ -24,7 +24,7 @@ public class BasicTest {
         String title = page.title();
         System.out.println("Current title of page: " +title);
         Assert.assertTrue(title.contains("Playwright"), "Title should contain 'Playwright'");
-        System.out
+        System.out.println("Passed title test");
     }
 
     @Test
