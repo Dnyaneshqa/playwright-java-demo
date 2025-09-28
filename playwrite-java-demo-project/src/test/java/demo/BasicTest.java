@@ -30,11 +30,12 @@ public class BasicTest {
     @Test
     public void testDocsLink() {
         page.navigate("https://playwright.dev/");
-        page.click("a:get-by-text('Docs')");
+        page.locator("a:has-text(\"Docs\")").click();   // ✅ valid for Java
         String url = page.url();
         System.out.println("Navigated URL: " + url);
         Assert.assertTrue(url.contains("docs"), "Should navigate to docs page");
     }
+
 
     
     @AfterClass
