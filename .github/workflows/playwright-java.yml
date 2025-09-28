@@ -23,9 +23,12 @@ jobs:
 
       - name: Build with Maven
         run: mvn clean install -DskipTests
+        working-directory: playwrite-java-demo-project
 
       - name: Install Playwright Browsers
         run: mvn exec:java -e -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install"
+        working-directory: playwrite-java-demo-project
 
       - name: Run Tests
         run: mvn test
+        working-directory: playwrite-java-demo-project
